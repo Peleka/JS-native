@@ -13,10 +13,7 @@ for (let j = 0; j < array.length - 1; j++) {
         }
     }
 }
-
-
 console.log(array)
-
 
 //sort  (reverse() - сорттирует в обратном порядке)
 
@@ -79,3 +76,30 @@ let students = [
 ];
 //по алфавиту имена
 console.log(students.sort((a,b) => a.name < b.name ? -1 : 1))
+
+
+///про this
+let user = {
+    name: 'Alex',
+    age: 25,
+    sayHallo() {
+       return (this.name+ ' ' + 'Hello')
+    }
+}
+console.log("User1", user.sayHallo())
+user2 = {
+    name: "Mary",
+    age: 19
+}
+user2.sayHallo = user.sayHallo
+console.log("User2", user2.sayHallo())
+let user3 = {
+    firstName: "Илья",
+    sayHi() {
+        let arrow = () => alert(this.firstName);
+        arrow();
+    }
+};
+user3.sayHi()
+////////////
+
