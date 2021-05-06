@@ -24,7 +24,7 @@ let students = [
         scores: 100
     },
     {
-        name: "John",
+        name: "Roy",
         age: 33,
         isMarried: false,
         scores: 160
@@ -108,23 +108,9 @@ console.log("sumScore", sumScore)
 //значение которого является массив имен всех остальных студентов из массива,
 //за исключением собственного имени студента
 
-const nameArr = newArrayStudents.reduce((acc, el) => {
-    acc.push(el.name)
-    return acc
-}, [])
-console.log(nameArr)
-
-//
-//
 function addFriends(array) {
-    const nameArr = array.reduce((acc, el) => {
-        acc.push(el.name)
-        return acc
-    }, [])
-
-    return array.map(st => ({...st, friends: nameArr}))
+    const friendsName = array.map(fr => fr.name)
+    return array.map(st => ({...st, friends: friendsName.filter(name => st.name !== name)}))
 }
 
-
 console.log("addFriends", addFriends(newArrayStudents))
-
