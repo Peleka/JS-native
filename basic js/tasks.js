@@ -104,3 +104,17 @@
 //     srArf = sum/array1.length
 // }
 // console.log(srArf)
+
+//дан массив. нужно вывести сумму двух наименьших в нем чисел
+let numbers = [1, 22, 3, 122, 5, -2, -11]
+
+function sumTwoSmallestNumbers(numbers) {
+    return numbers
+        .sort(function(a, b) { return a - b; })
+        .filter(el => el > 0)
+        .slice(0,2)
+        .reduce((acc, el) => acc + el)
+    //Code here
+}
+
+console.log(sumTwoSmallestNumbers(numbers))
